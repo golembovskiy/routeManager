@@ -21,7 +21,7 @@ public class Producer implements Runnable {
 			int priority = ThreadLocalRandom.current().nextInt(Packet.MIN_PRIORITY, Packet.MAX_PRIORITY);
 			try {
 				Packet packet = Packet.packetsFactory(size, priority);
-				System.out.println("Добавлен в очередь: " + packet);
+				System.out.println("Added to queue: " + packet);
 				queue.put(packet);
 				Thread.sleep(10);
 			} catch (InterruptedException e) {
